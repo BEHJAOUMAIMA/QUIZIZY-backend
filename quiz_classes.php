@@ -1,21 +1,28 @@
 <?php
-class Database
-{
 
-    public $hostname, $dbname, $username, $password, $conn;
+include("./database.php");
+class Question extends Database{
+    public static function getQuestions(){
+        $sql = "SELECT q.id,q.questions,q.explication, 
+        MIN(CASE WHEN c.id = (q.id*4)-3 THEN c.answers END) AS answer1,
+        MIN(CASE WHEN c.id = (q.id*4)-3 THEN c.id END) AS id_1, 
+        MAX(CASE WHEN c.id = (q.id*4)-2 THEN c.answers END) AS answer2,
+        MIN(CASE WHEN c.id = (q.id*4)-2 THEN c.id END) AS id_2, 
+        MIN(CASE WHEN c.id = (q.id*4)-1 THEN c.answers END) AS answer3,
+        MIN(CASE WHEN c.id = (q.id*4)-1 THEN c.id END) AS id_3, 
+        MAX(CASE WHEN c.id = (q.id*4) THEN c.answers END) AS answer4,
+        MIN(CASE WHEN c.id = (q.id*4) THEN c.id END) AS id_4 
+        FROM question q JOIN choice c GROUP by q.id ORDER by q.id;";
+            
+        $db = new Database();
+        $res= $db->conn->query($sql)->fetchAll();
+        return $res;
+    }
+    public static function evaluate($id){
+        $sql = "SELECT `status` FROM `choice` WHERE id =$id";
+        $db = new Database;
+        $res= $db->conn->query($sql)->fetchAll();
+        return $res[0];
 
-    function __construct()
-    {
-        $this->host_name = "localhost";
-        $this->dbname = "quizizy";
-        $this->username = "root";
-        $this->password = "";
-        try {
-
-            $this->conn = new PDO("mysql:host=$this->host_name;dbname=$this->dbname", $this->username, $this->password);
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            echo 'Error: ' . $e->getMessage();
-        }
     }
 }
