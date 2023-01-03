@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Mochiy+Pop+One&family=Poppins:wght@500;600;700;900&family=Rubik+Gemstones&family=Rubik+Spray+Paint&display=swap');
-* {
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Luckiest+Guy&family=Mochiy+Pop+One&family=Poppins:wght@500;600;700;900&family=Rubik+Gemstones&family=Rubik+Spray+Paint&display=swap');* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+$font1:'Mochiy Pop One',sans-serif;
+$font2:'Karla',sans-serif;
+$font3:'Poppins',sans-serif;
+$font4: 'Rubik Gemstones',cursive;
+$font5:'Rubik Spray Paint',cursive;
+$font6 : 'Luckiest Guy', cursive;
 
-$font1:'Mochiy Pop One',
-sans-serif;
-$font2:'Karla',
-sans-serif;
-$font3:'Poppins',
-sans-serif;
-$font4: 'Rubik Gemstones',
-cursive;
-$font5:'Rubik Spray Paint',
-cursive;
+// COLORS
+$color1:#ff9b2f;
+$color2 : #243763;
+$color3 : #fff;
+$color4:#ff6319;
 body {
-    background-image: url('../../images/bg1.jpg');
+    background-image: url('../../images/bg3.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -31,7 +31,7 @@ body {
         #stepper {
             ul {
                 display: none;
-                margin: 20px;
+                margin: 5px;
                 li {
                     list-style: none;
                     display: flex;
@@ -40,19 +40,20 @@ body {
                     justify-content: center;
                     font-family: $font3;
                     .icon {
-                        font-size: 30px;
-                        margin: 0 170px;
+                        font-size: 27px;
+                        margin: 0 200px;
+                        color: $color3;
                     }
                     .step {
                         font-size: 15px;
                         font-weight: 600;
                     }
                     .progress {
-                        margin: 3px 0;
+                        margin: 2px 0;
                         width: 30px;
                         height: 30px;
                         border-radius: 50%;
-                        background-color: gray;
+                        background-color: $color3;
                         display: grid;
                         place-items: center;
                         position: relative;
@@ -62,14 +63,16 @@ body {
                         }
                         .number {
                             font-size: 14px;
+                            color: $color4;
+                            font-weight: 800;
                         }
                     }
                     .progress::after {
                         content: " ";
                         position: absolute;
-                        width: 340px;
+                        width: 397px;
                         height: 5px;
-                        background-color: gray;
+                        background-color: $color3;
                         right: 30px;
                     }
                     .one::after {
@@ -77,7 +80,7 @@ body {
                         height: 0;
                     }
                     .active {
-                        background-color: #ff1582;
+                        background-color: $color4;
                         .number {
                             display: none;
                         }
@@ -86,7 +89,7 @@ body {
                         }
                     }
                     .active::after {
-                        background-color: #ff1582;
+                        background-color: $color4;
                     }
                 }
             }
@@ -94,32 +97,46 @@ body {
         .loading {
             display: flex;
             flex-direction: column;
-            margin: 20px 20px;
+            margin-top: 20px;
+            margin-right: 200px;
             .affiche {
-                text-align: center;
-                margin-top: 90px;
-                font-family: $font1;
-                font-size: 60px;
-                display: none;
+                text-align: start;
+                margin-top: 110px;
+                font-family: $font6;
+                display: flex;
+                color: $color1;
+                .test{
+                    margin-right: 15px;
+                    font-size: 60px;
+                    color: $color3;
+                    animation: flash;
+                    animation-duration: 7s;
+                    animation-iteration-count:infinite;
+                }
+                .part{
+                    font-size: 50px;
+                    animation: backInLeft;
+                    animation-duration: 3s;
+                }
             }
             #start {
-                height: 70px;
-                width: 340px;
+                height: 75px;
+                width: 350px;
                 text-align: center;
-                margin: 160px 320px;
-                padding: 18px 0;
-                background: rgb(178, 51, 110);
+                margin: 120px 180px;
+                padding: 18px 10px;
+                background:$color4;
                 color: white;
                 font-family: $font3;
                 font-size: 23px;
-                font-weight: 700;
-                border-radius: 30px;
+                font-weight: 800;
+                border-radius: 25px;
                 cursor: pointer;
             }
             #start:hover {
-                color: rgb(217, 96, 152);
-                background-color: #fff;
-                font-size: 24px;
+                color: $color4;
+                background-color: $color3;
+                font-size: 25px;
                 font-weight: bolder;
             }
         }
@@ -127,21 +144,25 @@ body {
     .section {
         display: none;
         flex-direction: column;
+        background-color: $color3;
+        width: 45%;
+        margin: 90px auto;
+        border-radius: 30px;
         .logo {
-            color: white;
+            color: black;
             font: {
-                family: $font1;
+                family: $font6;
                 size: 70px;
             }
             text-align: center;
-            margin-top:60px;
+            margin-top:20px;
         }
         .form {
             display: flex;
             flex-direction: column;
             margin: 20px auto;
             padding: 20px;
-            width: 450px;
+            width: 490px;
             background-color: #fff;
             border-radius: 15px;
             #input {
@@ -174,7 +195,7 @@ body {
             #btnvalider {
                 cursor: pointer;
                 padding: 15px;
-                margin-bottom: 7px;
+                margin-bottom: 10px;
                 text-align: center;
                 background-color: black;
                 border: none;

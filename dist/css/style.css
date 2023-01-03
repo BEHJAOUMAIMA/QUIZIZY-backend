@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Mochiy+Pop+One&family=Poppins:wght@500;600;700;900&family=Rubik+Gemstones&family=Rubik+Spray+Paint&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Luckiest+Guy&family=Mochiy+Pop+One&family=Poppins:wght@500;600;700;900&family=Rubik+Gemstones&family=Rubik+Spray+Paint&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@
 }
 
 body {
-  background-image: url("../../images/bg1.jpg");
+  background-image: url("../../images/bg3.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -22,7 +22,7 @@ body .container {
 }
 body .container #stepper ul {
   display: none;
-  margin: 20px;
+  margin: 5px;
 }
 body .container #stepper ul li {
   list-style: none;
@@ -33,19 +33,20 @@ body .container #stepper ul li {
   font-family: "Poppins", sans-serif;
 }
 body .container #stepper ul li .icon {
-  font-size: 30px;
-  margin: 0 170px;
+  font-size: 27px;
+  margin: 0 200px;
+  color: #fff;
 }
 body .container #stepper ul li .step {
   font-size: 15px;
   font-weight: 600;
 }
 body .container #stepper ul li .progress {
-  margin: 3px 0;
+  margin: 2px 0;
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: gray;
+  background-color: #fff;
   display: grid;
   place-items: center;
   position: relative;
@@ -56,13 +57,15 @@ body .container #stepper ul li .progress .uil {
 }
 body .container #stepper ul li .progress .number {
   font-size: 14px;
+  color: #ff6319;
+  font-weight: 800;
 }
 body .container #stepper ul li .progress::after {
   content: " ";
   position: absolute;
-  width: 340px;
+  width: 397px;
   height: 5px;
-  background-color: gray;
+  background-color: #fff;
   right: 30px;
 }
 body .container #stepper ul li .one::after {
@@ -70,7 +73,7 @@ body .container #stepper ul li .one::after {
   height: 0;
 }
 body .container #stepper ul li .active {
-  background-color: #ff1582;
+  background-color: #ff6319;
 }
 body .container #stepper ul li .active .number {
   display: none;
@@ -79,57 +82,80 @@ body .container #stepper ul li .active .uil {
   display: flex;
 }
 body .container #stepper ul li .active::after {
-  background-color: #ff1582;
+  background-color: #ff6319;
 }
 body .container .loading {
   display: flex;
   flex-direction: column;
-  margin: 20px 20px;
+  margin-top: 20px;
+  margin-right: 200px;
 }
 body .container .loading .affiche {
-  text-align: center;
-  margin-top: 90px;
-  font-family: "Mochiy Pop One", sans-serif;
+  text-align: start;
+  margin-top: 110px;
+  font-family: "Luckiest Guy", cursive;
+  display: flex;
+  color: #ff9b2f;
+}
+body .container .loading .affiche .test {
+  margin-right: 15px;
   font-size: 60px;
-  display: none;
+  color: #fff;
+  -webkit-animation: flash;
+          animation: flash;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+body .container .loading .affiche .part {
+  font-size: 50px;
+  -webkit-animation: backInLeft;
+          animation: backInLeft;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
 }
 body .container .loading #start {
-  height: 70px;
-  width: 340px;
+  height: 75px;
+  width: 350px;
   text-align: center;
-  margin: 160px 320px;
-  padding: 18px 0;
-  background: rgb(178, 51, 110);
+  margin: 120px 180px;
+  padding: 18px 10px;
+  background: #ff6319;
   color: white;
   font-family: "Poppins", sans-serif;
   font-size: 23px;
-  font-weight: 700;
-  border-radius: 30px;
+  font-weight: 800;
+  border-radius: 25px;
   cursor: pointer;
 }
 body .container .loading #start:hover {
-  color: rgb(217, 96, 152);
+  color: #ff6319;
   background-color: #fff;
-  font-size: 24px;
+  font-size: 25px;
   font-weight: bolder;
 }
 body .section {
   display: none;
   flex-direction: column;
+  background-color: #fff;
+  width: 45%;
+  margin: 90px auto;
+  border-radius: 30px;
 }
 body .section .logo {
-  color: white;
-  font-family: "Mochiy Pop One", sans-serif;
+  color: black;
+  font-family: "Luckiest Guy", cursive;
   font-size: 70px;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 20px;
 }
 body .section .form {
   display: flex;
   flex-direction: column;
   margin: 20px auto;
   padding: 20px;
-  width: 450px;
+  width: 490px;
   background-color: #fff;
   border-radius: 15px;
 }
@@ -157,7 +183,7 @@ body .section .form .errorname {
 body .section .form #btnvalider {
   cursor: pointer;
   padding: 15px;
-  margin-bottom: 7px;
+  margin-bottom: 10px;
   text-align: center;
   background-color: black;
   border: none;
@@ -221,7 +247,7 @@ body .guide #button button:hover {
   color: white;
 }
 body .guide:hover {
-  background-color: rgb(100, 105, 134);
+  background-color: rgb(123, 126, 142);
 }
 body .guide:hover .title {
   color: black;

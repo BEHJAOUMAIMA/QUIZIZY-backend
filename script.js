@@ -7,7 +7,7 @@ async function loadData(){
 }
 
 
-
+const title = document.querySelector(".loading");
 //CORRECTION
 const correction = document.querySelector(".correction");
 //stepper component
@@ -112,6 +112,7 @@ validerBtn.addEventListener("click", () => {
 startBtn.addEventListener("click", () => {
     start.style.display = "none";
     guide.style.display = "none";
+    title.style.display ="none";
     section.style.display = "flex";
     stepper.style.display = "flex";
 });

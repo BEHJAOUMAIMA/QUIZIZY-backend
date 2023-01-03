@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <title>Welcome</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <title>Quiz Application</title>
     <!-------- Link css ----------->
     <link rel="stylesheet" href="./dist/css/style.css" />
 </head>
@@ -22,7 +23,7 @@
                         <p class="number">1</p>
                         <i class="uil uil-check"></i>
                     </div>
-                    <!-- <p class="step">Informations</p> -->
+                    <p class="step">Informations</p>
                 </li>
                 <li>
                     <i class="icon uil uil-file-question-alt"></i>
@@ -30,7 +31,7 @@
                         <p class="number">2</p>
                         <i class="uil uil-check"></i>
                     </div>
-                    <!-- <p class="step">Quiz</p> -->
+                    <p class="step">Quiz</p>
                 </li>
                 <li>
                     <i class="icon uil uil-trophy"></i>
@@ -38,13 +39,13 @@
                         <p class="number">3</p>
                         <i class="uil uil-check"></i>
                     </div>
-                    <!-- <p class="step">Résultats</p> -->
+                    <p class="step">Résultats</p>
                 </li>
             </ul>
         </div>
         <div class="loading">
             <div class="affiche">
-                Tester Vos Connaissances
+              <span class="test"> Tester </span> <span class="part">Vos Connaissances !</span>
             </div>
             <div id="start">
                 Commencer Le Quiz
