@@ -1,3 +1,13 @@
+var quizData;
+async function loadData(){
+    let object = await fetch("quiz.json");
+    let text = await object.text();
+    quizData = JSON.parse(text);
+
+}
+
+
+
 //CORRECTION
 const correction = document.querySelector(".correction");
 //stepper component
@@ -139,27 +149,29 @@ function countDown() {
 }
 
 // aficher la question et les options
-
-function getData() {
-
+loadData().then(()=>{
+    quizData.sort(function() { return Math.random() - 0.5; });
+})
+async function getData() {
+    
     questionNumber.innerText = index + 1 + ". ";
-    questionText.textContent = quizData[index].question;
-    option1.textContent = quizData[index].answer_1;
-    option2.textContent = quizData[index].answer_2;
-    option3.textContent = quizData[index].answer_3;
-    option4.textContent = quizData[index].answer_4;
+    questionText.textContent = quizData[index].questions;
+    option1.textContent = quizData[index].answer1;
+    option2.textContent = quizData[index].answer2;
+    option3.textContent = quizData[index].answer3;
+    option4.textContent = quizData[index].answer4;
 
     // timer commence
     timer = 0;
 }
-getData();
+// getData()
 
 //
 
 answers.forEach(removeActive => {
     removeActive.classList.remove("active")
 })
-total_correct.innerHTML = `${index+1} sur ${quizData.length} Questions`;
+total_correct.innerHTML = `${index+1} sur 10 Questions`;
 
 
 answers.forEach((choices) => {
@@ -172,14 +184,14 @@ answers.forEach((choices) => {
             correct += 0;
             correction.innerHTML += `<div class="quest">
                 <h4 class="quNo">${index+1}. </h4>
-                <h4 class="tit">${quizData[index].question}</h4>
+                <h4 class="tit">${quizData[index].questions}</h4>
             </div>
             <div class="choices">
                 <p class="choix" id="ch1">${choices.innerText}</p>
                 <p class="choix" id="ch2">${quizData[index].right_answer}</p>
             </div>
             <div class="justif">
-                <p class="explication">${quizData[index].justification}</p>
+                <p class="explication">${quizData[index].explication}</p>
             </div>
             <hr>
             `;
@@ -262,4 +274,4 @@ startAgainBtn.addEventListener("click", () => {
 })
 
 //questions aléatoires:
-quizData.sort(function() { return Math.random() - 0.5; });
+

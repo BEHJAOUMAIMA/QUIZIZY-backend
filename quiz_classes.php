@@ -3,7 +3,7 @@
 include("./database.php");
 class Question extends Database{
     public static function getQuestions(){
-        $sql = "SELECT q.id,q.questions,q.explication, 
+        $sql = "SELECT q.*,
         MIN(CASE WHEN c.id = (q.id*4)-3 THEN c.answers END) AS answer1,
         MIN(CASE WHEN c.id = (q.id*4)-3 THEN c.id END) AS id_1, 
         MAX(CASE WHEN c.id = (q.id*4)-2 THEN c.answers END) AS answer2,
@@ -16,13 +16,17 @@ class Question extends Database{
             
         $db = new Database();
         $res= $db->conn->query($sql)->fetchAll();
-        return $res;
+        // return $res;
+        $encoded_quiz = json_encode($res);
+        print_r($encoded_quiz);
+        file_put_contents("quiz.json", $encoded_quiz);
     }
-    public static function evaluate($id){
-        $sql = "SELECT `status` FROM `choice` WHERE id =$id";
-        $db = new Database;
-        $res= $db->conn->query($sql)->fetchAll();
-        return $res[0];
+    // public static function evaluate($id){
+    //     $sql = "SELECT `status` FROM `choice` WHERE id =$id";
+    //     $db = new Database;
+    //     $res= $db->conn->query($sql)->fetchAll();
+    //     return $res[0];
 
-    }
+    // }
 }
+Question::getQuestions();
