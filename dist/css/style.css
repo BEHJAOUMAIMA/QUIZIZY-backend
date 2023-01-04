@@ -267,7 +267,7 @@ body .guide #button button {
 }
 body .guide #button button:hover {
   background-color: #ff6319;
-  color: white;
+  color: #fff;
   font-size: 20px;
 }
 body .application {
@@ -374,10 +374,11 @@ body .application .app-footer #btnNext:hover {
   transform: translateX(5px);
 }
 body #result {
-  height: 700px;
+  height: 600px;
   width: 1000px;
   padding: 20px;
-  background-color: rgb(0, 8, 54);
+  background-color: #fff;
+  color: #243763;
   border-radius: 30px;
   display: none;
   justify-content: center;
@@ -389,15 +390,17 @@ body #result h6 {
   font-size: 30px;
   font-family: "Poppins", sans-serif;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 10px;
+  color: #3E6D9C;
 }
 body #result #points {
   font-size: 25px;
-  margin-top: 30px;
+  margin-top: 10px;
+  color: #ff6319;
 }
 body #result .correction {
   width: 900px;
-  height: 380px;
+  height: 300px;
   margin: 30px auto;
   background-color: #ecf1f6;
   color: black;
@@ -432,10 +435,10 @@ body #result .correction .choices .choix {
   border-radius: 20px;
 }
 body #result .correction .choices #ch1 {
-  background-color: rgb(34, 124, 112);
+  background-color: #59CE8F;
 }
 body #result .correction .choices #ch2 {
-  background-color: rgb(230, 72, 72);
+  background-color: #e14242;
 }
 body #result .correction .justif {
   margin-top: 20px;
@@ -443,8 +446,9 @@ body #result .correction .justif {
   border-radius: 10px;
   margin-left: 20px;
   margin-bottom: 30px;
-  background-color: rgb(144, 94, 150);
+  background-color: #D2D3C9;
   padding: 10px 20px;
+  color: black;
 }
 body #result .div {
   display: flex;
@@ -457,17 +461,19 @@ body #result .div button {
   width: 200px;
   border: none;
   outline: none;
-  background-color: #ff1582;
-  color: #e7f1fa;
+  background-color: #243763;
+  color: #fff;
   border-radius: 20px;
   font-family: "Poppins", sans-serif;
-  font-size: 18px;
+  font-size: 12px;
+  font-weight: 500;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 16px;
   margin-right: 10px;
 }
 body #result .div button:hover {
-  background-color: white;
-  color: #ff1582;
-  font-weight: bold;
+  background-color: #fff;
+  border: 2px solid #ff6319;
+  color: #ff6319;
+  font-weight: 700;
 }/*# sourceMappingURL=style.css.map */

@@ -4,7 +4,6 @@ async function loadData(){
     let text = await object.text();
     quizData = JSON.parse(text);
 }
-
 // creation du Tableau pour stocker les reponses
 // let data = [];
 //objet pour chaque reponse
@@ -17,22 +16,6 @@ const correction = document.querySelector(".correction");
 const one = document.querySelector(".one");
 const two = document.querySelector(".two");
 const three = document.querySelector(".three");
-
-// one.onclick = function() {
-//     one.classList.add("active");
-//     two.classList.remove("active");
-//     three.classList.remove("active");
-// }
-// two.onclick = function() {
-//     one.classList.add("active");
-//     two.classList.add("active");
-//     three.classList.remove("active");
-// }
-// three.onclick = function() {
-//     one.classList.add("active");
-//     two.classList.add("active");
-//     three.classList.add("active");
-// }
 
 // STEPPER
 let stepper = document.getElementById("prog");
