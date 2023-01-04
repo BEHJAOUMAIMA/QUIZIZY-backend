@@ -3,9 +3,12 @@ async function loadData(){
     let object = await fetch("quiz.json");
     let text = await object.text();
     quizData = JSON.parse(text);
-
 }
 
+// creation du Tableau pour stocker les reponses
+// let data = [];
+//objet pour chaque reponse
+// let userChoice = {};
 
 const title = document.querySelector(".loading");
 //CORRECTION
@@ -110,7 +113,7 @@ validerBtn.addEventListener("click", () => {
 });
 //que se passe-t-il si le bouton "commencer" est clicker
 startBtn.addEventListener("click", () => {
-    start.style.display = "none";
+    startBtn.style.display = "none";
     guide.style.display = "none";
     title.style.display ="none";
     section.style.display = "flex";
@@ -119,6 +122,7 @@ startBtn.addEventListener("click", () => {
 
 //que se passe-t-il si le bouton "sortir" est clicker
 exitBtn.addEventListener("click", () => {
+    title.style.display ="block";
     startBtn.style.display = "block";
     guide.style.display = "none";
     stepper.style.display = "none";
@@ -161,13 +165,42 @@ async function getData() {
     option2.textContent = quizData[index].answer2;
     option3.textContent = quizData[index].answer3;
     option4.textContent = quizData[index].answer4;
+ 
+    // option1.setAttribute('data-option',`${quizData[index].id_1}`);
+    // option2.setAttribute('data-option',`${quizData[index].id_2}`);
+    // option3.setAttribute('data-option',`${quizData[index].id_3}`);
+    // option4.setAttribute('data-option',`${quizData[index].id_4}`);
 
+    // console.log(quizData)
+    // option1.setAttribute('data-questId',`${quizData[index].id}`);
+    // option2.setAttribute('data-questId',`${quizData[index].id}`);
+    // option3.setAttribute('data-questId',`${quizData[index].id}`);
+    // option4.setAttribute('data-questId',`${quizData[index].id}`);
+
+    // userChoice = {id:quizData[index].id, reponse:"no reponse", optionSelected:"41"};
+    // console.log(data);
     // timer commence
     timer = 0;
 }
-// getData()
-
-//
+// function results(){
+//     const xhr = new XMLHttpRequest();
+//     xhr.open('POST','script.php', true);
+    
+//     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+//     xhr.addEventListener('load',function(){
+//         let ans = JSON.stringify(xhr.responseText);
+//         ans = JSON.parse(xhr.responseText);
+//             console.log(ans);
+//     })
+    // xhr.onload= function(){
+    //     if(this.status === 200){
+            
+    //     }
+        
+    // }
+    // fonction deja dans js qui encode le lien pour echapper la manipulation de data par des etranges
+    // xhr.send(`data=${encodeURIComponent(JSON.stringify(data))}`);
+// }
 
 answers.forEach(removeActive => {
     removeActive.classList.remove("active")
@@ -176,8 +209,13 @@ total_correct.innerHTML = `${index+1} sur 10 Questions`;
 
 
 answers.forEach((choices) => {
-    choices.addEventListener("click", () => {
+    choices.addEventListener("click", (e) => {
         choices.classList.add("active");
+        // userChoice ={};
+        // userChoice.id = e.target.dataset.questid;
+        // userChoice.optionSelected = e.target.dataset.option;
+        // userChoice.reponse = e.target.innerText;
+        // console.log(data);
         //vérifier la réponse
         if (choices.innerText === quizData[index].right_answer) {
             correct++;
@@ -199,7 +237,7 @@ answers.forEach((choices) => {
         }
         // stopper le compteur
 
-        clearInterval(interval);
+        // clearInterval(interval);
 
         // faire désactiver les options restantes
         for (i = 0; i <= 3; i++) {
@@ -218,6 +256,7 @@ nextBtn.addEventListener("click", () => {
         answers.forEach(removeActive => {
             removeActive.classList.remove("active");
         })
+        // data.push(userChoice);
 
 
         // Afficher question 
@@ -257,7 +296,9 @@ nextBtn.addEventListener("click", () => {
 // click sur le botton "Quitter"
 
 quitBtn.addEventListener("click", () => {
-    startBtn.style.display = "block";
+    
+    title.style.display = "block";
+    startBtn.style.display ="block";
     result.style.display = "none";
     stepper.style.display = "none";
     one.classList.remove("active");
@@ -267,12 +308,10 @@ quitBtn.addEventListener("click", () => {
 
 // click sur le botton "recommencer"
 startAgainBtn.addEventListener("click", () => {
+    // results();
     section.style.display = "flex";
     result.style.display = "none";
     one.classList.remove("active");
     two.classList.remove("active");
     three.classList.remove("active");
 })
-
-//questions aléatoires:
-

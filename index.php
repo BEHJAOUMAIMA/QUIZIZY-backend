@@ -1,3 +1,6 @@
+<?php
+// include_once('script.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,7 +48,7 @@
         </div>
         <div class="loading">
             <div class="affiche">
-              <span class="test"> Tester </span> <span class="part">Vos Connaissances !</span>
+              <span class="test">Tester</span><span class="part">Vos Connaissances !</span>
             </div>
             <div id="start">
                 Commencer Le Quiz
@@ -56,7 +59,7 @@
     </div>
     <div class="section" id="section">
         <div>
-            <p class="logo">Quizizy !</p>
+            <p class="logo"><span class="p1">Quiz</span><span class="p2">izy</span> <span class="p3"> !</span> </p>
         </div>
         <div class="form">
             <input id="input" type="text" placeholder="Entrer votre Nom" />

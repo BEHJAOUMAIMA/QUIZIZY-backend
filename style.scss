@@ -15,13 +15,14 @@ $color1:#ff9b2f;
 $color2 : #243763;
 $color3 : #fff;
 $color4:#ff6319;
+$color5 : #3E6D9C;
 body {
     background-image: url('../../images/bg3.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
-    color: #fff;
+    color: $color3;
     .container {
         height: 100%;
         display: flex;
@@ -101,13 +102,15 @@ body {
             margin-right: 200px;
             .affiche {
                 text-align: start;
+                display: flex;
+                align-items: center;
                 margin-top: 110px;
                 font-family: $font6;
                 display: flex;
                 color: $color1;
                 .test{
                     margin-right: 15px;
-                    font-size: 60px;
+                    font-size: 80px;
                     color: $color3;
                     animation: flash;
                     animation-duration: 7s;
@@ -146,22 +149,38 @@ body {
         flex-direction: column;
         background-color: $color3;
         width: 45%;
+        height: 350px;
         margin: 90px auto;
-        border-radius: 30px;
+        border-radius: 20px;
         .logo {
             color: black;
             font: {
                 family: $font6;
-                size: 70px;
+                size: 75px;
             }
             text-align: center;
             margin-top:20px;
+            animation:rubberBand;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            .p1{
+                color: $color2;
+                font-size: 83px;
+            }
+            .p2{
+                color: $color4;
+            }
+            .p3{
+                color: $color5;
+                font-size: 85px;
+
+            }
         }
         .form {
             display: flex;
             flex-direction: column;
-            margin: 20px auto;
-            padding: 20px;
+            margin: 5px auto;
+            padding: 15px 20px;
             width: 490px;
             background-color: #fff;
             border-radius: 15px;
@@ -177,16 +196,13 @@ body {
                     weight: bold;
                     size: 15px;
                 }
-                border: {
-                    width: 3px;
-                    style: solid;
-                }
+               
             }
             .errorname {
-                color: black;
+                color: $color2;
                 font: {
                     family: $font3;
-                    size: 13px;
+                    size: 14px;
                     weight: bold;
                 }
                 text-align :center;
@@ -197,20 +213,20 @@ body {
                 padding: 15px;
                 margin-bottom: 10px;
                 text-align: center;
-                background-color: black;
+                background-color: $color2;
                 border: none;
                 color: white;
                 font: {
                     family: $font3;
                     weight: bold;
-                    size: 15px;
+                    size: 18px;
                 }
             }
             #btnvalider:hover {
-                background-color: #ff1582;
+                background-color: $color4;
                 color: white;
                 font-weight: bolder;
-                font-size: 18px;
+                font-size: 20px;
             }
         }
     }
@@ -218,7 +234,7 @@ body {
         background-color: white;
         color: black;
         width: 830px;
-        height: 320px;
+        height: 340px;
         display: none;
         flex-direction: column;
         margin: 110px auto;
@@ -228,18 +244,22 @@ body {
                 family: $font1;
                 size: 20px;
             }
-            margin-top:50px;
+            margin-top:35px;
             margin-bottom:25px;
             margin-left:35px;
-            color:#ff1582;
+            color:$color4;
         }
         .rule {
             font: {
                 family: $font3;
-                size: 16px;
+                size: 18px;
+                weight:700;
             }
-            margin-bottom:5px;
+            margin-bottom:10px;
             margin-left:35px;
+            animation:shakeX;
+            animation-duration: 4s;
+            // animation-iteration-count: infinite;
         }
         #button {
             height: 50px;
@@ -248,12 +268,12 @@ body {
             justify-content: flex-end;
             button {
                 height: 50px;
-                width: 120px;
+                width: 140px;
                 margin: 25px 15px;
                 border: none;
                 outline: none;
-                color: #e7f1fa;
-                background: black;
+                color: $color3;
+                background-color: $color2;
                 border-radius: 20px;
                 font-weight: bold;
                 font-family: $font3;
@@ -261,15 +281,10 @@ body {
                 cursor: pointer;
             }
             button:hover {
-                background-color: #ff1582;
+                background-color: $color4;
                 color: white;
+                font-size: 20px;
             }
-        }
-    }
-    .guide:hover {
-        background-color: rgb(123, 126, 142);
-        .title {
-            color: black;
         }
     }
     .application {
@@ -279,14 +294,14 @@ body {
         width: 1100px;
         height: 570px;
         padding: 15px;
-        background-color: white;
+        background-color: $color3;
         border-radius: 30px;
         color: black;
         .information {
             display: flex;
             padding: 15px;
             margin: 10px 7px;
-            color: rgb(34, 124, 112);
+            color: $color5;
             .categorie {
                 flex: 1;
                 font: {
@@ -301,16 +316,16 @@ body {
             }
         }
         .question {
-            margin: 8px auto;
+            margin: 0 auto;
             padding: 10px;
             display: flex;
-            flex-direction: row;
             .titre {
                 font: {
                     family: $font3;
-                    size: 16px;
+                    size: 20px;
                     weight: bold;
                 }
+                color: $color2;
                 margin:0;
             }
             h2:first-child {
@@ -319,7 +334,7 @@ body {
         }
         .options {
             padding: 0 20px 20px;
-            margin-top: 20px;
+            margin-top: 15px;
             height: 289px;
             width: 100%;
             .answer {
@@ -327,21 +342,23 @@ body {
                 height: 50px;
                 width: 100%;
                 margin: 15px auto;
-                border-radius: 20px;
+                border-radius: 10px;
                 padding: 10px 20px;
                 font-size: 15px;
+                font-weight: 800;
                 color: black;
                 overflow: hidden;
                 cursor: pointer;
                 border: 1px solid;
             }
             .answer:hover {
-                background-color: rgb(217, 96, 152);
+                background-color: $color5;
+                color: $color3;
             }
         }
         .options .active {
-            background-color: #ff1582;
-            color: #fff;
+            background-color: $color4;
+            color: $color3;
             font-weight: 700;
         }
         .options .disabled {
@@ -356,11 +373,11 @@ body {
                 font-family: $font3;
                 font-size: 18px;
                 font-weight: bold;
-                color: rgb(217, 96, 152);
+                color: $color2;
             }
             #btnNext {
-                background-color: rgb(217, 96, 152);
-                color: white;
+                background-color: $color2;
+                color: $color3;
                 display: block;
                 width: 120px;
                 padding: 18px 12px;
@@ -372,7 +389,7 @@ body {
                 cursor: pointer;
             }
             #btnNext:hover {
-                background-color: #f92d8c;
+                background-color: $color4;
                 font-size: 16px;
                 transform: translateX(5px);
             }

@@ -28,5 +28,6 @@ class Question extends Database{
     //     return $res[0];
 
     // }
+    
 }
 Question::getQuestions();
