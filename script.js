@@ -291,6 +291,8 @@ quitBtn.addEventListener("click", () => {
 
 // click sur le botton "recommencer"
 startAgainBtn.addEventListener("click", () => {
+    index=0;
+    total_correct.innerHTML = `${index+1} sur ${quizData.length} Questions`;
     // results();
     section.style.display = "flex";
     result.style.display = "none";

@@ -105,13 +105,13 @@ body .container .loading .affiche .test {
   color: #fff;
   -webkit-animation: flash;
           animation: flash;
-  -webkit-animation-duration: 7s;
-          animation-duration: 7s;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
 body .container .loading .affiche .part {
-  font-size: 50px;
+  font-size: 60px;
   -webkit-animation: backInLeft;
           animation: backInLeft;
   -webkit-animation-duration: 3s;
