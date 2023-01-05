@@ -9,12 +9,12 @@ body {
   background-image: url("../../images/bg3.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   color: #fff;
 }
 body .container {
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,11 +84,63 @@ body .container #stepper ul li .active .uil {
 body .container #stepper ul li .active::after {
   background-color: #ff6319;
 }
+@media (max-width: 767px) {
+  body .container #stepper ul {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  body .container #stepper ul li .icon {
+    font-size: 13px;
+    margin: 0 100px;
+  }
+  body .container #stepper ul li .step {
+    font-size: 7px;
+    font-weight: 300;
+  }
+  body .container #stepper ul li .progress {
+    width: 15px;
+    height: 15px;
+  }
+  body .container #stepper ul li .progress .number {
+    font-size: 7px;
+    font-weight: 400;
+  }
+  body .container #stepper ul li .progress::after {
+    content: " ";
+    position: absolute;
+    width: 198px;
+    height: 2px;
+    right: 15px;
+  }
+  body .container #stepper ul li .one::after {
+    width: 0;
+    height: 0;
+  }
+  body .container #stepper ul li .active .number {
+    display: none;
+  }
+  body .container #stepper ul li .active .uil {
+    display: flex;
+  }
+}
 body .container .loading {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
   margin-right: 200px;
+}
+@media (max-width: 767px) {
+  body .container .loading {
+    margin-top: 465px;
+    margin-right: auto;
+  }
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  body .container .loading {
+    margin-top: 430px;
+    margin-right: auto;
+  }
 }
 body .container .loading .affiche {
   text-align: start;
@@ -96,8 +148,17 @@ body .container .loading .affiche {
   align-items: center;
   margin-top: 110px;
   font-family: "Luckiest Guy", cursive;
-  display: flex;
   color: #ff9b2f;
+}
+@media (max-width: 767px) {
+  body .container .loading .affiche {
+    margin: 0px 140px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  body .container .loading .affiche {
+    margin: 0px 140px;
+  }
 }
 body .container .loading .affiche .test {
   margin-right: 15px;
@@ -110,12 +171,34 @@ body .container .loading .affiche .test {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
+@media (max-width: 767px) {
+  body .container .loading .affiche .test {
+    margin-right: 5px;
+    font-size: 35px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  body .container .loading .affiche .test {
+    margin-right: 10px;
+    font-size: 40px;
+  }
+}
 body .container .loading .affiche .part {
   font-size: 60px;
   -webkit-animation: backInLeft;
           animation: backInLeft;
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
+}
+@media (max-width: 767px) {
+  body .container .loading .affiche .part {
+    font-size: 30px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  body .container .loading .affiche .part {
+    font-size: 40px;
+  }
 }
 body .container .loading #start {
   height: 75px;
@@ -131,6 +214,16 @@ body .container .loading #start {
   border-radius: 25px;
   cursor: pointer;
 }
+@media (max-width: 767px) {
+  body .container .loading #start {
+    margin: 120px 180px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  body .container .loading #start {
+    margin: 95px 235px;
+  }
+}
 body .container .loading #start:hover {
   color: #ff6319;
   background-color: #fff;
@@ -141,10 +234,16 @@ body .section {
   display: none;
   flex-direction: column;
   background-color: #fff;
-  width: 45%;
+  width: 570px;
   height: 350px;
   margin: 90px auto;
   border-radius: 20px;
+}
+@media (max-width: 767px) {
+  body .section {
+    width: 468px;
+    margin: 230px 0;
+  }
 }
 body .section .logo {
   color: black;
@@ -158,6 +257,16 @@ body .section .logo {
           animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
+}
+@media (max-width: 767px) {
+  body .section .logo {
+    font-size: 65px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  body .section .logo {
+    font-size: 72px;
+  }
 }
 body .section .logo .p1 {
   color: #243763;
@@ -178,6 +287,16 @@ body .section .form {
   width: 490px;
   background-color: #fff;
   border-radius: 15px;
+}
+@media (max-width: 767px) {
+  body .section .form {
+    width: 420px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  body .section .form {
+    width: 450px;
+  }
 }
 body .section .form #input {
   padding: 15px;
@@ -223,8 +342,20 @@ body .guide {
   height: 340px;
   display: none;
   flex-direction: column;
-  margin: 110px auto;
+  margin: 150px auto;
   border-radius: 30px;
+}
+@media (max-width: 767px) {
+  body .guide {
+    width: 385px;
+    height: 370px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  body .guide {
+    width: 750px;
+    height: 320px;
+  }
 }
 body .guide .title {
   font-family: "Mochiy Pop One", sans-serif;
@@ -233,6 +364,19 @@ body .guide .title {
   margin-bottom: 25px;
   margin-left: 35px;
   color: #ff6319;
+}
+@media (max-width: 767px) {
+  body .guide .title {
+    margin-top: 25px;
+    margin-left: 18px;
+    font-size: 15px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  body .guide .title {
+    margin-top: 30px;
+    font-size: 17px;
+  }
 }
 body .guide .rule {
   font-family: "Poppins", sans-serif;
@@ -245,11 +389,34 @@ body .guide .rule {
   -webkit-animation-duration: 4s;
           animation-duration: 4s;
 }
+@media (max-width: 767px) {
+  body .guide .rule {
+    margin: 6px 18px;
+    font-size: 14px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  body .guide .rule {
+    margin-left: 30px;
+    font-size: 16px;
+  }
+}
 body .guide #button {
   height: 50px;
   width: 100%;
   display: flex;
   justify-content: flex-end;
+}
+@media (max-width: 767px) {
+  body .guide #button {
+    justify-content: center;
+  }
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  body .guide #button {
+    height: 40px;
+    width: 100%;
+  }
 }
 body .guide #button button {
   height: 50px;
@@ -264,6 +431,24 @@ body .guide #button button {
   font-family: "Poppins", sans-serif;
   font-size: 18px;
   cursor: pointer;
+}
+@media (max-width: 767px) {
+  body .guide #button button {
+    height: 34px;
+    width: 110px;
+    margin: 26px 7px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  body .guide #button button {
+    height: 40px;
+    width: 120px;
+    margin: 26px 11px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
 }
 body .guide #button button:hover {
   background-color: #ff6319;
@@ -281,17 +466,39 @@ body .application {
   border-radius: 30px;
   color: black;
 }
+@media (max-width: 767px) {
+  body .application {
+    width: 355px;
+    height: 586px;
+    margin: 10px auto;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 35px;
+  }
+}
 body .application .information {
   display: flex;
   padding: 15px;
   margin: 10px 7px;
   color: #3E6D9C;
 }
+@media (max-width: 767px) {
+  body .application .information {
+    padding: 10px;
+    margin: 5px 4px;
+  }
+}
 body .application .information .categorie, body .application .information .timer {
   flex: 1;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: bold;
+}
+@media (max-width: 767px) {
+  body .application .information .categorie, body .application .information .timer {
+    font-size: 8px;
+    font-weight: bolder;
+  }
 }
 body .application .information .timer {
   text-align: right;
@@ -308,6 +515,11 @@ body .application .question .titre {
   color: #243763;
   margin: 0;
 }
+@media (max-width: 767px) {
+  body .application .question .titre {
+    font-size: 15px;
+  }
+}
 body .application .question h2:first-child {
   margin: 0 10px 0 5px;
 }
@@ -316,6 +528,14 @@ body .application .options {
   margin-top: 15px;
   height: 289px;
   width: 100%;
+}
+@media (max-width: 767px) {
+  body .application .options {
+    padding: 0 16px 16px;
+    margin-top: 12px;
+    height: 250px;
+    width: 100%;
+  }
 }
 body .application .options .answer {
   font-family: "Poppins", sans-serif;
@@ -330,6 +550,15 @@ body .application .options .answer {
   overflow: hidden;
   cursor: pointer;
   border: 1px solid;
+}
+@media (max-width: 767px) {
+  body .application .options .answer {
+    height: 60px;
+    margin: 12px auto;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+  }
 }
 body .application .options .answer:hover {
   background-color: #3E6D9C;
@@ -349,11 +578,21 @@ body .application .app-footer {
   justify-content: space-between;
   margin: auto 50px;
 }
+@media (max-width: 767px) {
+  body .application .app-footer {
+    margin: 78px 20px;
+  }
+}
 body .application .app-footer #total_correct {
   font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: bold;
   color: #243763;
+}
+@media (max-width: 767px) {
+  body .application .app-footer #total_correct {
+    font-size: 12px;
+  }
 }
 body .application .app-footer #btnNext {
   background-color: #243763;
@@ -367,6 +606,13 @@ body .application .app-footer #btnNext {
   font-weight: bold;
   font-size: 15px;
   cursor: pointer;
+}
+@media (max-width: 767px) {
+  body .application .app-footer #btnNext {
+    width: 98px;
+    padding: 12px 12px;
+    font-size: 11px;
+  }
 }
 body .application .app-footer #btnNext:hover {
   background-color: #ff6319;

@@ -1,8 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Luckiest+Guy&family=Mochiy+Pop+One&family=Poppins:wght@500;600;700;900&family=Rubik+Gemstones&family=Rubik+Spray+Paint&display=swap');* {
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Luckiest+Guy&family=Mochiy+Pop+One&family=Poppins:wght@500;600;700;900&family=Rubik+Gemstones&family=Rubik+Spray+Paint&display=swap');
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+//mixins
+
+@mixin breakpoints($point) {
+    @if $point == mobile {
+        @media (max-width: 767px) {
+            @content;
+        }
+    }@else if $point == tablette{
+        @media (min-width: 768px) and (max-width :1000px){
+            @content;
+        }
+    }
+}
+
+// Fonts 
 $font1:'Mochiy Pop One',sans-serif;
 $font2:'Karla',sans-serif;
 $font3:'Poppins',sans-serif;
@@ -24,11 +40,11 @@ body {
     background-image: url('../../images/bg3.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment:fixed;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     color: $color3;
     .container {
-        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -98,20 +114,79 @@ body {
                     }
                 }
             }
+            @include breakpoints(mobile){
+                ul{
+                    display: none !important;
+                }
+            }
+            @include breakpoints(tablette){
+                ul{
+                    li{
+                        .icon {
+                            font-size: 13px;
+                            margin: 0 100px;
+                        } 
+                        .step {
+                            font-size: 7px;
+                            font-weight: 300;
+                        }
+                        .progress {
+                            width: 15px;
+                            height: 15px;
+                            .number {
+                                font-size: 7px;
+                                font-weight: 400;
+                            }
+                        }
+                        .progress::after {
+                            content: " ";
+                            position: absolute;
+                            width: 198px;
+                            height: 2px;
+                            right: 15px;
+                        }
+                        .one::after {
+                            width: 0;
+                            height: 0;
+                        }
+                        .active {
+                            .number {
+                                display: none;
+                            }
+                            .uil {
+                                display: flex;
+                            }
+                        }
+                    }
+                }
+            }
         }
         .loading {
             display: flex;
             flex-direction: column;
             margin-top: 20px;
             margin-right: 200px;
+            @include breakpoints(mobile){
+                margin-top: 465px;
+                margin-right: auto;
+            }
+            @include breakpoints(tablette){
+                margin-top: 430px;
+                margin-right: auto;
+            }
             .affiche {
                 text-align: start;
                 display: flex;
                 align-items: center;
                 margin-top: 110px;
                 font-family: $font6;
-                display: flex;
                 color: $color1;
+                @include breakpoints(mobile){
+                    margin: 0px 140px;
+                }
+                @include breakpoints(tablette){
+                    margin: 0px 140px; 
+                }
                 .test{
                     margin-right: 15px;
                     font-size: 80px;
@@ -119,11 +194,25 @@ body {
                     animation: flash;
                     animation-duration: 20s;
                     animation-iteration-count:infinite;
+                    @include breakpoints(mobile){
+                        margin-right: 5px;
+                        font-size: 35px;
+                    }
+                    @include breakpoints(tablette){
+                        margin-right: 10px;
+                        font-size: 40px;
+                    }
                 }
                 .part{
                     font-size: 60px;
                     animation: backInLeft;
                     animation-duration: 3s;
+                    @include breakpoints(mobile){
+                        font-size: 30px;
+                    }
+                    @include breakpoints(tablette){
+                        font-size: 40px;
+                    }
                 }
             }
             #start {
@@ -139,6 +228,12 @@ body {
                 font-weight: 800;
                 border-radius: 25px;
                 cursor: pointer;
+                @include breakpoints(mobile){
+                    margin: 120px 180px;               
+                }
+                @include breakpoints(tablette){
+                    margin: 95px 235px;
+                }
             }
             #start:hover {
                 color: $color4;
@@ -152,10 +247,18 @@ body {
         display: none;
         flex-direction: column;
         background-color: $color3;
-        width: 45%;
+        width: 570px;
         height: 350px;
         margin: 90px auto;
         border-radius: 20px;
+        @include breakpoints(mobile){
+            width: 468px;
+            margin: 230px 0;
+
+        }
+        @include breakpoints(teblette){
+            width: 570px;
+        }
         .logo {
             color: black;
             font: {
@@ -167,6 +270,12 @@ body {
             animation:rubberBand;
             animation-duration: 4s;
             animation-iteration-count: infinite;
+            @include breakpoints(mobile){
+                font-size: 65px;
+            }
+            @include breakpoints(tablette){
+                font-size: 72px;
+            }
             .p1{
                 color: $color2;
                 font-size: 83px;
@@ -188,6 +297,12 @@ body {
             width: 490px;
             background-color: #fff;
             border-radius: 15px;
+            @include breakpoints(mobile){
+                width: 420px;
+            }
+            @include breakpoints(tablette){
+                width: 450px;
+            }
             #input {
                 padding: 15px;
                 margin-top: 15px;
@@ -241,8 +356,16 @@ body {
         height: 340px;
         display: none;
         flex-direction: column;
-        margin: 110px auto;
+        margin: 150px auto;
         border-radius: 30px;
+        @include breakpoints(mobile){
+            width: 385px;
+            height: 370px;
+        }
+        @include breakpoints(tablette){
+            width: 750px;
+            height: 320px;
+        }
         .title {
             font: {
                 family: $font1;
@@ -252,6 +375,15 @@ body {
             margin-bottom:25px;
             margin-left:35px;
             color:$color4;
+            @include breakpoints(mobile){
+                margin-top:25px;
+                margin-left:18px;
+                font-size: 15px;
+            }
+            @include breakpoints(tablette){
+                margin-top:30px;
+                font-size: 17px;
+            }
         }
         .rule {
             font: {
@@ -263,12 +395,27 @@ body {
             margin-left:35px;
             animation:shakeX;
             animation-duration: 4s;
+            @include breakpoints(mobile){
+                margin:6px 18px;
+                font-size: 14px;
+            }
+            @include breakpoints(tablette){
+                margin-left:30px;
+                font-size: 16px;
+            }
         }
         #button {
             height: 50px;
             width: 100%;
             display: flex;
             justify-content: flex-end;
+            @include breakpoints(mobile){
+                justify-content: center;
+            }
+            @include breakpoints(tablette){
+                height: 40px;
+                width: 100%;
+            }
             button {
                 height: 50px;
                 width: 140px;
@@ -282,6 +429,20 @@ body {
                 font-family: $font3;
                 font-size: 18px;
                 cursor: pointer;
+                @include breakpoints(mobile){
+                    height: 34px;
+                    width: 110px;
+                    margin: 26px 7px;
+                    border-radius: 10px;
+                    font-size: 12px;
+                }
+                @include breakpoints(tablette){
+                    height: 40px;
+                    width: 120px;
+                    margin: 26px 11px;
+                    border-radius: 10px;
+                    font-size: 12px;
+                }
             }
             button:hover {
                 background-color: $color4;
@@ -300,17 +461,39 @@ body {
         background-color: $color3;
         border-radius: 30px;
         color: $color9;
+        @include breakpoints(mobile){
+            width: 355px;
+            height: 586px;
+            margin: 10px auto;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 35px;
+        }
+        @include breakpoints(tablette){
+
+        }
         .information {
             display: flex;
             padding: 15px;
             margin: 10px 7px;
             color: $color5;
+            @include breakpoints(mobile){
+                padding: 10px;
+                margin: 5px 4px;
+            }
+            @include breakpoints(tablette){
+
+            }
             .categorie {
                 flex: 1;
                 font: {
                     family: $font3;
                     size: 14px;
                     weight: bold;
+                }
+                @include breakpoints(mobile){
+                    font-size: 8px;
+                    font-weight: bolder;
                 }
             }
             .timer {
@@ -330,6 +513,10 @@ body {
                 }
                 color: $color2;
                 margin:0;
+                @include breakpoints(mobile){
+                    font-size: 15px;
+
+                }
             }
             h2:first-child {
                 margin: 0 10px 0 5px;
@@ -340,6 +527,12 @@ body {
             margin-top: 15px;
             height: 289px;
             width: 100%;
+            @include breakpoints(mobile){
+                padding: 0 16px 16px;
+                margin-top: 12px;
+                height: 250px;
+                width: 100%;
+            }
             .answer {
                 font-family: $font3;
                 height: 50px;
@@ -353,6 +546,13 @@ body {
                 overflow: hidden;
                 cursor: pointer;
                 border: 1px solid;
+                @include breakpoints(mobile){
+                    height: 60px;
+                    margin: 12px auto;
+                    font-size: 12px;
+                    font-weight: 400;
+                    text-align: center;
+                }
             }
             .answer:hover {
                 background-color: $color5;
@@ -372,11 +572,17 @@ body {
             align-items: center;
             justify-content: space-between;
             margin: auto 50px;
+            @include breakpoints(mobile){
+                margin: 78px 20px;
+            }
             #total_correct {
                 font-family: $font3;
                 font-size: 18px;
                 font-weight: bold;
                 color: $color2;
+                @include breakpoints(mobile){
+                    font-size: 12px;
+                }
             }
             #btnNext {
                 background-color: $color2;
@@ -390,6 +596,12 @@ body {
                 font-weight: bold;
                 font-size: 15px;
                 cursor: pointer;
+                @include breakpoints(mobile){
+                    width: 98px;
+                    padding: 12px 12px;
+                    font-size: 11px;
+
+                }
             }
             #btnNext:hover {
                 background-color: $color4;
