@@ -619,6 +619,12 @@ body .application .app-footer #btnNext:hover {
   font-size: 16px;
   transform: translateX(5px);
 }
+@media (max-width: 767px) {
+  body .application .app-footer #btnNext:hover {
+    font-size: 12px;
+    transform: translateX(3px);
+  }
+}
 body #result {
   height: 600px;
   width: 1000px;
@@ -632,6 +638,13 @@ body #result {
   align-items: center;
   margin: auto auto;
 }
+@media (max-width: 767px) {
+  body #result {
+    width: 350px;
+    border-radius: 20px;
+    margin: 35px auto;
+  }
+}
 body #result h6 {
   font-size: 30px;
   font-family: "Poppins", sans-serif;
@@ -639,10 +652,22 @@ body #result h6 {
   margin-top: 10px;
   color: #3E6D9C;
 }
+@media (max-width: 767px) {
+  body #result h6 {
+    font-size: 15px;
+    margin-top: 5px;
+  }
+}
 body #result #points {
   font-size: 25px;
   margin-top: 10px;
   color: #ff6319;
+}
+@media (max-width: 767px) {
+  body #result #points {
+    font-size: 17px;
+    margin-top: 11px;
+  }
 }
 body #result .correction {
   width: 900px;
@@ -653,6 +678,13 @@ body #result .correction {
   font-family: "Poppins", sans-serif;
   border-radius: 10px;
   overflow: scroll;
+}
+@media (max-width: 767px) {
+  body #result .correction {
+    width: 300px;
+    height: 370px;
+    margin: 20px auto;
+  }
 }
 body #result .correction .quest {
   display: flex;
@@ -666,10 +698,22 @@ body #result .correction .quest {
 body #result .correction .quest .quNo {
   margin-right: 3px;
 }
+@media (max-width: 767px) {
+  body #result .correction .quest {
+    padding: 5px 10px;
+    font-size: 10px;
+    margin: 10px auto;
+  }
+}
 body #result .correction .choices {
   width: 100%;
   height: 90px;
   font-family: "Poppins", sans-serif;
+}
+@media (max-width: 767px) {
+  body #result .correction .choices {
+    height: 90px;
+  }
 }
 body #result .correction .choices .choix {
   padding: 10px 20px;
@@ -679,6 +723,15 @@ body #result .correction .choices .choix {
   margin-bottom: 10px;
   width: 90%;
   border-radius: 20px;
+}
+@media (max-width: 767px) {
+  body #result .correction .choices .choix {
+    padding: 8px 18px;
+    font-size: 10px;
+    margin-left: 17px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
 }
 body #result .correction .choices #ch1 {
   background-color: #59CE8F;
@@ -696,11 +749,26 @@ body #result .correction .justif {
   padding: 10px 20px;
   color: black;
 }
+@media (max-width: 767px) {
+  body #result .correction .justif {
+    margin-top: 25px;
+    width: 92%;
+    margin-left: 12px;
+    padding: 12px 17px;
+    font-size: 10px;
+  }
+}
 body #result .div {
   display: flex;
   justify-content: center;
   align-items: end;
   margin: auto 0;
+}
+@media (max-width: 767px) {
+  body #result .div {
+    align-items: center;
+    margin: 0 0;
+  }
 }
 body #result .div button {
   height: 50px;
@@ -717,9 +785,24 @@ body #result .div button {
   margin-top: 16px;
   margin-right: 10px;
 }
+@media (max-width: 767px) {
+  body #result .div button {
+    height: 40px;
+    width: 113px;
+    border-radius: 8px;
+    margin-top: 18px;
+    margin-right: 6px;
+    font-size: 10px;
+  }
+}
 body #result .div button:hover {
   background-color: #fff;
   border: 2px solid #ff6319;
   color: #ff6319;
   font-weight: 700;
+}
+@media (max-width: 767px) {
+  body #result .div button:hover {
+    font-weight: 400;
+  }
 }/*# sourceMappingURL=style.css.map */

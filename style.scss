@@ -607,6 +607,10 @@ body {
                 background-color: $color4;
                 font-size: 16px;
                 transform: translateX(5px);
+                @include breakpoints(mobile){
+                    font-size: 12px;
+                    transform: translateX(3px);
+                }
             }
         }
     }
@@ -622,17 +626,30 @@ body {
         flex-direction: column;
         align-items: center;
         margin: auto auto;
+        @include breakpoints(mobile){
+            width: 350px;
+            border-radius: 20px;
+            margin: 35px auto;
+        }
         h6 {
             font-size: 30px;
             font-family: $font3;
             text-align: center;
             margin-top: 10px;
             color: $color5;
+            @include breakpoints(mobile){
+                font-size: 15px;
+                margin-top: 5px;
+            }
         }
         #points {
             font-size: 25px;
             margin-top: 10px;
             color: $color4;
+            @include breakpoints(mobile){
+                font-size: 17px;
+                margin-top: 11px;
+            }
         }
         .correction {
             width: 900px;
@@ -643,6 +660,12 @@ body {
             font-family: $font3;
             border-radius: 10px;
             overflow: scroll;
+            @include breakpoints(mobile){
+                width: 300px;
+                height: 370px;
+                margin: 20px auto;
+
+            }
             .quest {
                 display: flex;
                 justify-content: center;
@@ -654,11 +677,21 @@ body {
                 .quNo {
                     margin-right: 3px;
                 }
+                @include breakpoints(mobile){
+                    padding: 5px 10px;
+                    font-size: 10px;
+                    margin: 10px auto;
+
+                }
             }
             .choices {
                 width: 100%;
                 height: 90px;
                 font-family: $font3;
+                @include breakpoints(mobile){
+                    height: 90px;
+
+                }
                 .choix {
                     padding: 10px 20px;
                     font-size: 12px;
@@ -667,6 +700,13 @@ body {
                     margin-bottom: 10px;
                     width: 90%;
                     border-radius: 20px;
+                    @include breakpoints(mobile){
+                        padding: 8px 18px;
+                        font-size: 10px;
+                        margin-left: 17px;
+                        border-radius: 10px;
+                        margin-bottom: 10px;
+                    }
                 }
                 #ch1 {
                     background-color: $color6;
@@ -684,6 +724,13 @@ body {
                 background-color: $color8;
                 padding: 10px 20px;
                 color: $color9;
+                @include breakpoints(mobile){
+                    margin-top: 25px;
+                    width: 92%;
+                    margin-left: 12px;
+                    padding: 12px 17px;
+                    font-size: 10px;
+                }
             }
         }
         .div {
@@ -691,6 +738,11 @@ body {
             justify-content: center;
             align-items: end;
             margin: auto 0;
+            @include breakpoints(mobile){
+                align-items: center;
+                margin: 0 0;
+
+            }
             button {
                 height: 50px;
                 width: 200px;
@@ -705,13 +757,25 @@ body {
                 cursor: pointer;
                 margin-top: 16px;
                 margin-right: 10px;
+                @include breakpoints(mobile){
+                    height: 40px;
+                    width: 113px;
+                    border-radius: 8px;
+                    margin-top: 18px;
+                    margin-right: 6px;
+                    font-size: 10px;
+                }
             }
             button:hover {
                 background-color: $color3;
                 border: 2px solid $color4;
                 color: $color4;
                 font-weight: 700;
+                @include breakpoints(mobile){
+                    font-weight: 400;
+                }
             }
+            
         }
     }
 }
